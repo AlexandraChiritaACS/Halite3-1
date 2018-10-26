@@ -6,6 +6,7 @@ public class GameMap {
     public final int width;
     public final int height;
     public final MapCell[][] cells;
+    public Position shipYard;
 
     public GameMap(final int width, final int height) {
         this.width = width;
@@ -71,11 +72,11 @@ public class GameMap {
         return possibleMoves;
     }
 
-    public Direction naiveNavigate(final Ship ship, final Position destination) {
+    public Direction naiveNavigate(final Ship ship, final Position destination, boolean endgame) {
         // getUnsafeMoves normalizes for us
         for (final Direction direction : getUnsafeMoves(ship.position, destination)) {
             final Position targetPos = ship.position.directionalOffset(direction);
-            if (!at(targetPos).isOccupied()) {
+            if (!at(targetPos).isOccupied() || endgame && targetPos.equals(shipYard)) {
                 at(targetPos).markUnsafe(ship);
                 return direction;
             }
