@@ -7,6 +7,7 @@ public class GameMap {
     public final int height;
     public final MapCell[][] cells;
     public Position shipYard;
+    public Position dropOff;
 
     public GameMap(final int width, final int height) {
         this.width = width;
@@ -76,7 +77,7 @@ public class GameMap {
         // getUnsafeMoves normalizes for us
         for (final Direction direction : getUnsafeMoves(ship.position, destination)) {
             final Position targetPos = ship.position.directionalOffset(direction);
-            if (!at(targetPos).isOccupied() || endgame && targetPos.equals(shipYard)) {
+            if (!at(targetPos).isOccupied() || endgame && targetPos.equals(shipYard) || targetPos.equals(shipYard) && !at(targetPos).ship.owner.equals(ship.owner) || endgame && targetPos.equals(dropOff) ) {
                 at(targetPos).markUnsafe(ship);
                 return direction;
             }
@@ -120,5 +121,15 @@ public class GameMap {
         }
 
         return map;
+    }
+
+    public boolean clearShipyard(Shipyard shipYard){
+        ArrayList<Position> yard = shipYard.position.getSurroundingCardinals();
+        for (Position around : yard){
+            if (!at(around).isEmpty()){
+                return false;
+            }
+        }
+        return true;
     }
 }

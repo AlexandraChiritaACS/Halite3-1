@@ -6,7 +6,7 @@ import hlt.*;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class MyBot {
+public class MyBotold0 {
     public static void main(final String[] args) {
         final long rngSeed;
         if (args.length > 1) {
