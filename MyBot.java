@@ -1,3 +1,4 @@
+import CustomCode.MostHaliteOnArea;
 import hlt.*;
 import hlt.Log;
 
@@ -20,7 +21,6 @@ public class MyBot {
         HashMap<Integer, String> shipsStatus = new HashMap<>();
 
         game.ready("Vandalist");
-        Log.log((Integer.toString(Constants.MAX_HALITE)));
         Log.log("Successfully created bot! My Player ID is " + game.myId + ". Bot rng seed is " + rngSeed + ".");
         final Player me = game.me;
         final GameMap gameMap = game.gameMap;
@@ -29,7 +29,7 @@ public class MyBot {
         Position dropLocation = null;
         boolean onLocation = false;
         int buyShip;
-        double returnSpeed = 1.4;
+        double returnSpeed = 1.3;
         if (mapSize > 55) {
             buyShip = 300;
         } else {
@@ -38,6 +38,9 @@ public class MyBot {
 
         gameMap.shipYard = me.shipyard.position;
         boolean endgame = false;
+        MostHaliteOnArea mostHaliteOnArea= new MostHaliteOnArea();
+        mostHaliteOnArea.setGameMap(gameMap);
+
         for (; ; ) {
             int shipCount = 0;
             game.updateFrame();
@@ -57,11 +60,11 @@ public class MyBot {
                 endgame = true;
             }
             if (gameTurn == 25) {
-                returnSpeed = 1.35;
+                returnSpeed = 1.25;
             } else if (gameTurn == 50) {
-                returnSpeed = 1.3;
-            } else if (gameTurn == 100) {
                 returnSpeed = 1.2;
+            } else if (gameTurn == 100) {
+                returnSpeed = 1.1;
             }
             for (Ship ship : me.ships.values()) {
                 shipCount++;
@@ -87,18 +90,19 @@ public class MyBot {
                     shipsStatus.put(id, "exploring");
                     Log.log("new ship");
                 }
-                if (shipCount == 12 && me.dropoffs.isEmpty() && mapSize > 55 && players == 2 && !shipsStatus.containsValue("dropoff")) {
+                if (shipCount == 12 && me.dropoffs.isEmpty() && mapSize >= 48 && players == 2 && !shipsStatus.containsValue("dropoff")) {
                     shipsStatus.replace(id, "dropoff");
+                    mostHaliteOnArea.setMostHaliteInArea();
                 }
                 if (shipsStatus.get(id).equals("dropoff")) {
-                    if (ship.position.equals(new Position(shipYardX + 1, (mapSize - 10)))) {
+                    if (ship.position.equals(mostHaliteOnArea.getMostHaliteInArea())) {
                         onLocation = true;
                         if (me.halite > Constants.DROPOFF_COST) {
                             commandQueue.add(ship.makeDropoff());
                             onLocation = false;
                         }
                     } else {
-                        commandQueue.add(ship.move(gameMap.naiveNavigate(ship, new Position(shipYardX + 1, (mapSize - 10)), false)));
+                        commandQueue.add(ship.move(gameMap.naiveNavigate(ship, (mostHaliteOnArea.getMostHaliteInArea()), false)));
                     }
                 }
 
