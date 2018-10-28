@@ -24,35 +24,38 @@ public class MostHaliteOnArea {
 
     public void setMostHaliteInArea() {
         Position home = gameMap.shipYard;
+        Log.log(Integer.toString(home.x));
         int blockSize;
         int maxBlockSize = 32;
         int minBlockSize = 8;
+        int startX = 0;
         if (home.x > 32) {
+            startX = 32;
             minBlockSize = 32;
             maxBlockSize = 64;
         }
-        int blockHalite = 0;
+        int newblockHalite = 0;
 
-        int startX = 0;
+
         int x;
         int maxHaliteBlok = 0;
         Position bestPosition = null;
 
         for (blockSize = minBlockSize; blockSize <= maxBlockSize; blockSize += 8) {
             for (int y = 0; y < mHeight; y++) {
-                for (x = startX; x < blockSize; x++) {
+                for (x = startX; x < maxBlockSize; x++) {
                     int halite = gameMap.at(new Position(x, y)).halite;
-                    blockHalite += halite;
+                    newblockHalite += halite;
                 }
                 if (y != 0 && (y + 1) % 8 == 0) {
-                    if (maxHaliteBlok < blockHalite) {
+                    if (maxHaliteBlok < newblockHalite) {
                         Position localBest = new Position(x - 4, y - 4);
-                        if (gameMap.calculateDistance(home, localBest) > 15) {
-                            maxHaliteBlok = blockHalite;
-                            bestPosition = new Position(x - 4, y - 4);
+                        if (gameMap.calculateDistance(home, localBest) > 8) {
+                            maxHaliteBlok = newblockHalite;
+                            bestPosition = localBest;
                         }
                     }
-                    blockHalite = 0;
+                    newblockHalite = 0;
                 }
             }
             startX += 8;

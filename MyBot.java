@@ -29,7 +29,7 @@ public class MyBot {
         Position dropLocation = null;
         boolean onLocation = false;
         int buyShip;
-        double returnSpeed = 1.3;
+        double returnSpeed = 1.35;
         if (mapSize > 55) {
             buyShip = 300;
         } else {
@@ -38,7 +38,7 @@ public class MyBot {
 
         gameMap.shipYard = me.shipyard.position;
         boolean endgame = false;
-        MostHaliteOnArea mostHaliteOnArea= new MostHaliteOnArea();
+        MostHaliteOnArea mostHaliteOnArea = new MostHaliteOnArea();
         mostHaliteOnArea.setGameMap(gameMap);
 
         for (; ; ) {
@@ -60,7 +60,7 @@ public class MyBot {
                 endgame = true;
             }
             if (gameTurn == 25) {
-                returnSpeed = 1.25;
+                returnSpeed = 1.3;
             } else if (gameTurn == 50) {
                 returnSpeed = 1.2;
             } else if (gameTurn == 100) {
@@ -87,8 +87,12 @@ public class MyBot {
                 }
 
                 if (!shipsStatus.containsKey(id)) {
-                    shipsStatus.put(id, "exploring");
-                    Log.log("new ship");
+                    if (dropLocation != null && id % 2 == 0) {
+                        shipsStatus.put(id, "toDropoff");
+                    } else {
+                        shipsStatus.put(id, "exploring");
+                        Log.log("new ship");
+                    }
                 }
                 if (shipCount == 12 && me.dropoffs.isEmpty() && mapSize >= 48 && players == 2 && !shipsStatus.containsValue("dropoff")) {
                     shipsStatus.replace(id, "dropoff");
@@ -105,7 +109,15 @@ public class MyBot {
                         commandQueue.add(ship.move(gameMap.naiveNavigate(ship, (mostHaliteOnArea.getMostHaliteInArea()), false)));
                     }
                 }
-
+                if (shipsStatus.get(id).equals("toDropoff")) {
+                    if (aroundDropof(ship, dropLocation)) {
+                        shipsStatus.replace(id, "exploring");
+                    } else if (gameMap.at(ship.position).halite < Constants.MAX_HALITE / 10) {
+                        commandQueue.add(ship.move(gameMap.naiveNavigate(ship, dropLocation, false)));
+                    } else {
+                        commandQueue.add(ship.stayStill());
+                    }
+                }
                 if (shipsStatus.get(id).equals("exploring")) {
                     if (gameMap.at(ship.position).halite < Constants.MAX_HALITE / 10) {
                         Position bestPos = greatestHaliteAroundShip(ship, gameMap);
@@ -171,5 +183,15 @@ public class MyBot {
             bestPos = ship.position;
         }
         return bestPos;
+    }
+
+    public static boolean aroundDropof(Ship ship, Position dropoffPosition) {
+        ArrayList<Position> aroundDrop = dropoffPosition.getSurroundingCardinals();
+        for (Position around : aroundDrop) {
+            if (around.equals(ship.position)) {
+                return true;
+            }
+        }
+        return false;
     }
 }

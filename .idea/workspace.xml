@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5424d859-b643-4be8-8ff4-8afcf311b75b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomCode/MostHaliteAroundShip.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomCode/MostHaliteOnArea.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomCode/MostHaliteOnArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomCode/MostHaliteOnArea.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/MyBot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mybot.old0.java" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,9 +28,9 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="21" />
-          <entry key="gitignore" value="2" />
+          <entry key="gitignore" value="3" />
           <entry key="java" value="41" />
-          <entry key="log" value="24" />
+          <entry key="log" value="25" />
           <entry key="md" value="6" />
         </counts>
       </usages-collector>
@@ -39,21 +38,21 @@
         <counts>
           <entry key="CLASS" value="21" />
           <entry key="JAVA" value="41" />
-          <entry key="Log" value="12" />
+          <entry key="Log" value="13" />
           <entry key="Markdown" value="6" />
-          <entry key="PLAIN_TEXT" value="14" />
+          <entry key="PLAIN_TEXT" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="gitignore" value="7" />
-          <entry key="java" value="6945" />
+          <entry key="gitignore" value="9" />
+          <entry key="java" value="7417" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="6945" />
-          <entry key="PLAIN_TEXT" value="7" />
+          <entry key="JAVA" value="7417" />
+          <entry key="PLAIN_TEXT" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -67,24 +66,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MyBot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1589">
-              <caret line="92" column="75" lean-forward="true" selection-start-line="92" selection-start-column="75" selection-end-line="92" selection-end-column="75" />
+            <state relative-caret-position="273">
+              <caret line="64" column="33" lean-forward="true" selection-start-line="64" selection-start-column="33" selection-end-line="64" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CustomCode/MostHaliteOnArea.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
-              <caret line="49" column="73" lean-forward="true" selection-start-line="49" selection-start-column="73" selection-end-line="49" selection-end-column="73" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#268#269#0" expanded="true" />
-                <element signature="e#307#308#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -112,12 +97,12 @@
       <list>
         <option value="$PROJECT_DIR$/CustomCode/MostHaliteAroundShip.java" />
         <option value="$PROJECT_DIR$/Mybot0.java" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/Mybot.old0.java" />
         <option value="$PROJECT_DIR$/hlt/GameMap.java" />
         <option value="$PROJECT_DIR$/hlt/MapCell.java" />
-        <option value="$PROJECT_DIR$/MyBot.java" />
         <option value="$PROJECT_DIR$/CustomCode/MostHaliteOnArea.java" />
+        <option value="$PROJECT_DIR$/MyBot.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -181,7 +166,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540755900629" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540760308634" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -215,16 +200,15 @@
       <workItem from="1540557048051" duration="44031000" />
       <workItem from="1540729091680" duration="2006000" />
       <workItem from="1540731471471" duration="2664000" />
-      <workItem from="1540734471187" duration="7706000" />
+      <workItem from="1540734471187" duration="11484000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56407000" />
+    <option name="totallyTimeSpent" value="60185000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="1" />
@@ -234,7 +218,7 @@
       <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.2958435" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="1" weight="0.32936078" />
+      <window_info anchor="bottom" id="Terminal" order="1" visible="true" weight="0.32922733" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Database Changes" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="4" />
@@ -380,13 +364,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hlt/Log.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
@@ -408,14 +385,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bot-1.log">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="LogFileEditorProvider">
-        <state relative-caret-position="21">
-          <caret line="1" column="5" lean-forward="true" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bot-0.log">
       <provider selected="true" editor-type-id="LogFileEditorProvider">
         <state relative-caret-position="21">
@@ -433,10 +402,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/bot-1.log">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="LogFileEditorProvider">
+        <state relative-caret-position="2289">
+          <caret line="989" column="1" lean-forward="true" selection-start-line="989" selection-start-column="1" selection-end-line="989" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CustomCode/MostHaliteOnArea.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="49" column="73" lean-forward="true" selection-start-line="49" selection-start-column="73" selection-end-line="49" selection-end-column="73" />
+        <state relative-caret-position="422">
+          <caret line="65" column="1" lean-forward="true" selection-start-line="65" selection-start-column="1" selection-end-line="65" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#268#269#0" expanded="true" />
@@ -445,10 +422,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/MyBot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1589">
-          <caret line="92" column="75" lean-forward="true" selection-start-line="92" selection-start-column="75" selection-end-line="92" selection-end-column="75" />
+        <state relative-caret-position="273">
+          <caret line="64" column="33" lean-forward="true" selection-start-line="64" selection-start-column="33" selection-end-line="64" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
